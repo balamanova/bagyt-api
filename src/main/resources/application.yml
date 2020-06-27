@@ -1,0 +1,44 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://bagyt-user:bagyt-user@bagyt-uzv2v.mongodb.net/bagyt?retryWrites=true&w=majority
+#      uri: mongodb://localhost:27017/bagyt
+    mongo:
+      repositories:
+        enabled: true
+  cache:
+    type: redis
+  redis:
+    host: ${REDIS_URL}
+    port: 6379
+    jedis:
+      pool:
+        max-active: 7
+        max-idle: 7
+        min-idle: 2
+        max-wait: -1ms
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: is1602kk@gmail.com
+    password: htmlismylove
+    properties:
+      mail:
+        debug: true
+        transport:
+          protocol: smtp
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+          starttls:
+            enable: true
+jwt:
+  secret: bagyt
+
+app:
+  client:
+    id: sso-auth-client
+    secret: mySecret
+
